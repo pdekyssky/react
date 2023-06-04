@@ -1,28 +1,32 @@
 import "./Example.css"
+import { useState } from "react"
 
 const Example = () => {
-    //pure JavaScript
-
-    const myArr = ["Peter", "David", "Tomas"]
-    //console.log(myArr[0])
-
-    const [stundet1, student2, student3] = myArr
-
-   /* console.log(stundet1)
-    console.log(student2)
-    console.log(student3)*/
-    
-    //pure JavaScript
-    let title = "My first title"
+    //*console.log("TEST");
+    const [title, setTitle] = useState("My first title")
+    const [buttonText, setButtonText] = useState("BUTTON TEXT")
+   
 
     const buttonHandler = () => {
-        console.log("click")
+        setTitle("My new title text")
+        
     }
-
+    const titleHandler = () => {
+        setTitle("Title number 3")
+    }
+    const removeTitle = () => {
+        setTitle("")
+    }
+    const buttonChange = () => {
+        setButtonText("New BTN TEXT")
+    }
     return(
         <div>
             <h1>{title}</h1>
             <button type="button" onClick={buttonHandler}>Change title</button>
+            <button type="button" onClick={titleHandler}>Again change title</button>
+            <button type="button" onClick={removeTitle}>Remove title</button>
+            <button type="button" onClick={buttonChange}>{buttonText}</button>
         </div>
     )
 }
