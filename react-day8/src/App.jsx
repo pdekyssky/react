@@ -12,7 +12,7 @@ const App = () => {
   const [loading, setLoading] = useState(true)
   const [latitude, setLatitude] = useState("")
   const [longitude, setLongitude] = useState("")
-  const [buttonClick, setButtonClick] = useState(false)
+  
 
 
 
