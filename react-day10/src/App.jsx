@@ -6,6 +6,7 @@ import categories from "./Categories";
 const App = () => {
 
   const [typeOfMovie, setTypeOfMovie] = useState("romantic")
+ 
 
   const resultMovies = data.filter( (oneMovie) => {
     return oneMovie.category === typeOfMovie       ///filter/iterate cross eveery movie save it to oneMovie and return only if category === useState
