@@ -1,0 +1,14 @@
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    padding: 15px;
+    height: 30px;
+    }
+button {
+    cursor: pointer;
+    background-color: red;
+    font-size: larger;
+    font-weight: 900;
+}

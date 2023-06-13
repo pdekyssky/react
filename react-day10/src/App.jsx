@@ -13,23 +13,26 @@ const App = () => {
       setFilteredMovie(data)
     } else {
         const resultMovies = data.filter( (oneMovie) => {
-        return oneMovie.category === typeOfMovie       ///filter/iterate cross eveery movie save it to oneMovie and return only if category === useState
+        return oneMovie.category === typeOfMovie  
+        
+        ///filter/iterate cross eveery movie save it to oneMovie and return only if category === useState
       }) 
       setFilteredMovie(resultMovies)
+
     }
   },[typeOfMovie])
 
 
   return (
     <div>
-      <div>
+      <div className="buttons">
         {
           categories.map( (one, index) => {
           return <button onClick={() => setTypeOfMovie(one)} key={index}>{one}</button>    // set type of movie on movie list which i clicked 
         })
       }
+      <button onClick={() => setFilteredMovie(data)}>All Movies</button>
       </div>
-    
     <div>
       {
         filteredMovie.map( (oneMovie) => {
