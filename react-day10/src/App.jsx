@@ -14,13 +14,23 @@ const App = () => {
 
   return (
     <div>
-      <h1>Test</h1>
+    <div>
+
+      {
+        categories.map( (one, index) => {
+          return <button onClick={() => setTypeOfMovie(one)} key={index}>{one}</button>    // set type of movie on movie list which i clicked 
+        })
+      }
+
+    </div>
+    <div>
+      
       {
         resultMovies.map( (oneMovie) => {
           const {id, image, title, age, tags, description} = oneMovie
 
           return (
-            <div className="movies">
+            <div className="movies" key={id}>
               <img src={image} />
               <h2>{title}</h2>
               <p>{age}</p>
@@ -30,6 +40,7 @@ const App = () => {
           )
         })
       }
+    </div>
     </div>
   )
 }
