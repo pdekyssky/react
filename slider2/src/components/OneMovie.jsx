@@ -6,6 +6,23 @@ import data from "../data"
 const OneMovie = () => {
     const [index, setIndex] = useState(0)
    
+    //movies 
+    useEffect( () => {
+        if ( index < 0) {
+            setIndex(data.length - 1)
+        }
+        else if(index > data.length - 1) {
+        setIndex(0)
+     }
+    }, [index])
+
+    //auto rotation
+    useEffect( ()=> {
+       let interval = setInterval( () => {
+            setIndex(index + 1)
+        }, 3000)
+        return () => clearInterval(interval)
+    }, [index])
 
     return <section className="all-movies">
         <div className="all-movies-content">
