@@ -1,0 +1,25 @@
+.whole-card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    max-width: 50%;
+    margin: 0 auto;
+}
+.whole-card img {
+    padding-top: 100px;
+    width: 450px;
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+button {
+    background-color: red;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
