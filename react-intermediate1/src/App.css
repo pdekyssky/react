@@ -1,0 +1,11 @@
+.userName {
+    margin-bottom: 10px;
+    outline: none;
+}
+input[type="submit"] {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
