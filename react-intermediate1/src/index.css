@@ -6,9 +6,10 @@ body {
 }
 
 form {
-    height: 100vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  /*  border: 3px solid red; */
 }
