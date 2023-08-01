@@ -5,10 +5,14 @@ import "./App.css"
 
 function App() {
 
+  const [count, setCount] = useState(0)
+  const [paragrapfs, setParagrapfs] = useState([])
 
   const submitForm = (e) => {
     e.preventDefault()
-    console.log("form sended")
+    const ammount = parseInt(count)
+   setParagrapfs(data.slice(0, ammount)) 
+
   }
 
 
@@ -20,10 +24,17 @@ function App() {
     </h1>
    <form onSubmit={submitForm}>
     <label htmlFor='paragrapfs'>Paragrapfs: </label>
-    <input type='number' id='paragrapfs'></input> <br/>
+    <input type='number' id='paragrapfs' onChange={ (e) => setCount(e.target.value)}></input> <br/>
     <input type='submit' value="Generate"/>
    </form>
     
+    <article>
+      {paragrapfs.map( (oneParagraf, index) => {
+        return <p key={index}>{oneParagraf}</p>
+      })}
+    </article>
+
+
     </div>
   )
 }
