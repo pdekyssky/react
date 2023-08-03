@@ -10,9 +10,17 @@ function App() {
 
   const submitForm = (e) => {
     e.preventDefault()
-    const ammount = parseInt(count)
-   setParagrapfs(data.slice(0, ammount)) 
+    let amount = parseInt(count)
+  
 
+    if (amount < 0){
+      amount = 1 
+      alert("pick positve number")
+    } else if (amount > 5) {
+      amount = 5
+      alert("max number is 5")
+    }
+    setParagrapfs(data.slice(0, amount)) 
   }
 
 
