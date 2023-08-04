@@ -30,7 +30,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className='form-section'>
 
     <h1>
        Lorem Ipsum Generator
