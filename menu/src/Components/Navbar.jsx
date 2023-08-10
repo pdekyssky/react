@@ -6,7 +6,7 @@ import { useState } from "react"
 
 const Navbar = () => {
 
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(true)
 
   return (
   <nav>
@@ -17,7 +17,7 @@ const Navbar = () => {
           <GiHamburgerMenu className="hamburger-icon"/>
         </button>
       </div>
-      <div className={showMenu ? "nav-list show" : "nav-list hide"}>
+      <div className={showMenu ? "nav-list hide" : "nav-list show"}>
       <ul>
         {
           links.map( (oneLink) => {
