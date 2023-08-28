@@ -21,6 +21,7 @@ nav {
 }
 .nav-header button {
     display: none;
+    cursor: pointer;
 }
 .nav-list {
     display: flex;
