@@ -70,10 +70,11 @@ const App = () => {
       //console.log(newMovie);
       dispatch({ type : "ADD_MOVIE", payload: newMovie})
       //setMovieName("");
-      e.target.reset()
+    //  e.target.reset()
     } else {
       dispatch( { type: "NO_MOVIE_NAME" })
     }
+    setMovieName("")
   }
  // CLOSE NOTIFICATION ABOUT MOVIE
   const closeNotification = () => {
@@ -93,7 +94,7 @@ const App = () => {
       />}
 
       <form onSubmit={submitForm}>
-        <input type="text"  onChange={ (e)=> setMovieName(e.target.value)  }/>
+        <input type="text" value={movieName}  onChange={ (e)=> setMovieName(e.target.value)  }/>
         <input type="submit" value="send" />
       </form>
 
