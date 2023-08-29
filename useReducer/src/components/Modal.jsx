@@ -6,14 +6,14 @@ const Modal = ({notifContent, closeNotif}) => {
   useEffect( () =>{
     setTimeout( () => {
       closeNotif()
-    }, 2000)
+    }, 2500)
 
 
   })
 
-  return (<div>
-    {notifContent}
-    <p onClick={closeNotif}>x</p>
+  return (<div className="modal-box">
+    <div className="modal-text">{notifContent}</div>
+    {/*<p onClick={closeNotif}>x</p>*/}
     </div>
   )
 }
