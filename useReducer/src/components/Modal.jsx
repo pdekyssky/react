@@ -12,7 +12,7 @@ const Modal = ({notifContent, closeNotif}) => {
   })
 
   return (<div className="modal-box">
-    <div className="modal-text">{notifContent}</div>
+    <div className="notification">{notifContent}</div>
     {/*<p onClick={closeNotif}>x</p>*/}
     </div>
   )

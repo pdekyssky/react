@@ -1,6 +1,7 @@
 import Modal from "./components/Modal"
 import data from "./Data"
 import { useState, useReducer } from "react"
+import "./App.css"
 
 const reducer = (state, action) => {
     if (action.type === "ADD_MOVIE") {
@@ -87,7 +88,7 @@ const App = () => {
   }
   return ( <>
 
-    <section>
+    <section className="form">
       {state.showNotification && <Modal 
                                     notifContent={state.notificationContent}
                                     closeNotif={closeNotification}
@@ -100,7 +101,7 @@ const App = () => {
 
       <div>
         {state.movies.map((oneMovie) => {
-          return <div key={oneMovie.id}> 
+          return <div key={oneMovie.id} className="all-movies"> 
             <h2>{oneMovie.name}</h2>
             <button onClick={ () => { dispatch( { type: "REMOVE_MOVIE" , payload: oneMovie.id})}}>Delete</button>
            </div>    
