@@ -2,9 +2,14 @@ import "./App.css"
 import data from "./Data"
 import MovieBox from "./components/MovieBox"
 import { useState } from "react"
+import moviesContext from "./components/MoviesContext"
 
 
 const App = () => {
+
+
+  //prop drilling 
+  //useContext
 
     const [movies, setMovies] = useState(data)
 
@@ -16,11 +21,12 @@ const App = () => {
     }
 
   return (
-    <div><MovieBox 
+    <moviesContext.Provider value="hey">
+    <MovieBox 
     data ={movies}
     deleteMovie={deleteMovie}
     />
-    </div>
+    </moviesContext.Provider>
   )
 }
 
