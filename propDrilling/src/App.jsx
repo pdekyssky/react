@@ -10,6 +10,8 @@ const App = () => {
 
   //prop drilling 
   //useContext
+  // totaly removed prop drilling
+  //sending deletemovie funciton and movies as object and destructure it in movies 
 
     const [movies, setMovies] = useState(data)
 
@@ -21,11 +23,8 @@ const App = () => {
     }
 
   return (
-    <moviesContext.Provider value="hey">
-    <MovieBox 
-    data ={movies}
-    deleteMovie={deleteMovie}
-    />
+    <moviesContext.Provider value= { {deleteMovie, movies}}> 
+    <MovieBox />
     </moviesContext.Provider>
   )
 }
