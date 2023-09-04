@@ -14,8 +14,8 @@ const books = [
     {
         id: 3,
        // image: "https://www.knihydobrovsky.cz/thumbs/book-list/mod_eshop/produkty/h/harry-potter-a-vezen-z-azkabanu-9788000063393.jpg.webp",
-        title: "Harry Potter a Vezen z Azkabanu",
-        price: 20
+       // title: "Harry Potter a Vezen z Azkabanu",
+        //price: 20
     },
 ]
 

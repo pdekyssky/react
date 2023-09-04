@@ -3,11 +3,14 @@ import propTypes from "prop-types"
 import defaultImage from "../images/book-default.jpg"
 
 
+//this is last comment btw
+//or you can make default props instantly in return 
+
 const Book = ({id, image, title, price}) => {
   return ( <div>
-    <h2>{title}</h2>
-    <img src={image} alt={title}/>
-    <p>{price} €</p>
+    <h2>{title || "default title"}</h2>
+    <img src={image || defaultImage} alt={title}/>
+    <p>{price || 0} €</p>
   </div>
   )
 }
@@ -22,12 +25,12 @@ Book.propTypes = {
 
 //default props which will be used if i dont get data
 
-Book.defaultProps = {
+/*Book.defaultProps = {
   title: "default title",
   price: 0,
   image: defaultImage,
 }
-
+*/
 
 
 export default Book
