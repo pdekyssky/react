@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom"
+import { Outlet } from "react-router-dom"
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 
 const Home = () => {
-  return (<>
-  <ul>
-     <li>Home</li>
-    <li><Link to="/serials">Serials</Link></li>
-    <li><Link to="/movies">Movies</Link></li>
-    </ul>
-  </>
+  return (<section>
+    <h1>Home page</h1>
+  </section>
    
   )
 }
