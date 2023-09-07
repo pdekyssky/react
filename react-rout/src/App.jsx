@@ -4,6 +4,7 @@ import Movies from "./pages/Movies"
 import Serials from "./pages/Serials"
 import Error from "./pages/Error"
 import Layout from "./pages/Layout"
+import OneMovie from "./components/OneMovie"
 
 
 
@@ -15,6 +16,7 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/serials" element={<Serials />} />
+            <Route path="" element={<OneMovie />} />
             <Route path="*" element={<Error />} />
           </Route>
      

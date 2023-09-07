@@ -1,3 +1,11 @@
 .active {
     color: red
 }
+
+.notActiveLink {
+    color: blue;
+    text-decoration: none;
+}
+.link {
+    font-size: 20px;
+}
