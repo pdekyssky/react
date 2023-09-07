@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import "./Navbar.css"
 
 const Navbar = () => {
-  return ( <nav>
-    <Link to="/">Home</Link> <br/>
-    <Link to="/movies">Movies</Link> <br/>
-    <Link to="/serials">Serials</Link>
-  </nav>
+  return ( <header>
+  {/*NavLink add on click active Class so i can make some magic with CSS*/}
+  <nav>
+    <NavLink to="/">Home</NavLink> <br/>
+    <NavLink to="/movies">Movies</NavLink> <br/>
+    <NavLink to="/serials">Serials</NavLink>
+    </nav>
+  </header>
   )
 }
 
