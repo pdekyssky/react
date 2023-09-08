@@ -1,6 +1,8 @@
+import "./Footer.css"
+
 const Footer = () => {
   return ( <footer>
-    <p>This is footer</p>
+    <p>&copy; Peter Dekyssky</p>
   </footer>
   )
 }

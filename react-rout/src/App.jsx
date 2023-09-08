@@ -5,6 +5,7 @@ import Serials from "./pages/Serials"
 import Error from "./pages/Error"
 import Layout from "./pages/Layout"
 import OneMovie from "./components/OneMovie"
+import "./App.css"
 
 
 
@@ -16,7 +17,11 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/serials" element={<Serials />} />
-            <Route path="" element={<OneMovie />} />
+
+            {/*** /:movieID ist parameter  you can have more parameter like after movieID/:category ***/}
+            <Route path="/all-movies/:movieID" element={<OneMovie />} />
+            {/*** PARAMETERS IN REACT ROUTER DOM   ***/}
+            
             <Route path="*" element={<Error />} />
           </Route>
      
