@@ -9,6 +9,10 @@ const [error, setError] = useState(false)
 //console.log(data);
 
 //useState for form 
+const [movieName, setMovieName] = useState("")
+const [movieAge, setMovieAge] = useState("")
+const [movieLength, setMovieLength] = useState("")
+
 
 
 useEffect( () => {
@@ -54,30 +58,56 @@ in handle delete function than you set that ID in .doc(id) so database will know
 const handleDelete =(id) => {
   projectFirestore.collection("movies").doc(id).delete()
 }
-  
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault()
+ 
+ // console.log(movieName);
+ // console.log(movieAge);
+  //console.log(movieLength);
+
+  /*** Create Object which you put to database you can do it this way or if you in useStates use names like in database you can do it just with title, age, length *** */
+  const newMovie = {title: movieName, age: movieAge, length: movieLength}
+
+  try {
+    await projectFirestore.collection("movies").add(newMovie)
+    setMovieName("")
+    setMovieAge("")
+    setMovieLength("")
+  } catch (err) {
+    setError("No movies were added to database")
+  }
+}
 
 
   return ( 
     <div className="all-movies"> 
 
-      <form>
+      <form onSubmit={handleSubmit}>
 
         <input 
           type="text" 
           placeholder="movie name"
+          onChange={(e) => setMovieName(e.target.value)}
+          value={movieName}
           />
          <br />
 
         <input 
           type="number" 
           placeholder="minimal age" 
-          min="30" 
+          onChange={(e) => setMovieAge(e.target.value)}
+          min="0" 
+          value={movieAge}
         /><br />
 
         <input 
           type="number"   
           placeholder="movie length" 
+          onChange={(e) => setMovieLength(e.target.value)}
           min="0" 
+          value={movieLength}
         /><br />
 
         <input 
@@ -93,12 +123,13 @@ const handleDelete =(id) => {
      
       {data.map( (oneMovie) => {
         {/* you can destructure oneMovie to items or you dont have to  */}
-        const {id, title, length} = oneMovie
+        const {id, title, length,age} = oneMovie
 
             return ( 
               <div key={id} className="one-movie">
                 <h2>{title}</h2>
-                <p>Movie length is {length} mins</p>
+                <p>{length} mins</p>
+                <p>{age} +</p>
                 <button className="btn" onClick={() => handleDelete(id)}>Delete Movie</button>
               </div>
             )
