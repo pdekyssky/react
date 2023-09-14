@@ -63,6 +63,7 @@ const handleDelete =(id) => {
 const handleSubmit = async (e) => {
   e.preventDefault()
  
+  /* condition to make sure user do not add to database empty files */  
   if (movieName === "" || movieAge === "" || movieLength === "") {
     alert("Add Movie info / data please")
   } else {
