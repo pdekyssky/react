@@ -63,19 +63,23 @@ const handleDelete =(id) => {
 const handleSubmit = async (e) => {
   e.preventDefault()
  
-
-  /*** Create Object which you put to database you can do it this way or if you in useStates use names like in database you can do it just with title, age, length *** */
+  if (movieName === "" || movieAge === "" || movieLength === "") {
+    alert("Add Movie info / data please")
+  } else {
+    /*** Create Object which you put to database you can do it this way or if you in useStates use names like in database you can do it just with title, age, length *** */
   const newMovie = {title: movieName, age: movieAge, length: movieLength}
- /* after you add movie to database clear inputs this is first step with setsMovie, setAge ... next step is in input you have to make value = {} inside parnetes property will be Movie age number so 
- it will show actual value which is "" */
-  try {
-    await projectFirestore.collection("movies").add(newMovie)
-    setMovieName("")
-    setMovieAge("")
-    setMovieLength("")
-  } catch (err) {
-    setError("No movies were added to database")
+  /* after you add movie to database clear inputs this is first step with setsMovie, setAge ... next step is in input you have to make value = {} inside parnetes property will be Movie age number so 
+  it will show actual value which is "" */
+   try {
+     await projectFirestore.collection("movies").add(newMovie)
+     setMovieName("")
+     setMovieAge("")
+     setMovieLength("")
+   } catch (err) {
+     setError("No movies were added to database")
+   }
   }
+
 }
 
 
