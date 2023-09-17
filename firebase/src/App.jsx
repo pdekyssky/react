@@ -91,27 +91,30 @@ const handleSubmit = async (e) => {
 
         <input 
           type="text" 
+          className="input"
           placeholder="movie name"
           onChange={(e) => setMovieName(e.target.value)}
           value={movieName}
           />
-         <br />
+     
 
         <input 
           type="number" 
+          className="input"
           placeholder="minimal age" 
           onChange={(e) => setMovieAge(e.target.value)}
           min="0" 
           value={movieAge}
-        /><br />
+        />
 
         <input 
           type="number"   
+          className="input"
           placeholder="movie length" 
           onChange={(e) => setMovieLength(e.target.value)}
           min="0" 
           value={movieLength}
-        /><br />
+        />
 
         <input 
           type="submit" 

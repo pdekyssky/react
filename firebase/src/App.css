@@ -36,3 +36,32 @@ body {
     padding: 5px 10px;
     cursor: pointer;
 }
+
+form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+form input[type="submit"] {
+    background-color: #e50914;
+    color: #e5e5e5;
+    border: none;
+    font-size: 16px;
+    margin-top: 10px;
+padding: 5px 10px;
+cursor: pointer;
+}
+
+.input {
+    font-size: 16px;
+    background-color: #141414;
+    color: #e5e5e5;
+    padding: 2px 7px;
+}
+
+.input::placeholder {
+    color: #d7caca;
+}
