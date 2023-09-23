@@ -8,6 +8,7 @@ const Allmovies = () => {
   const [data, setData] = useState([])
   const [error, setError] = useState("")
   console.log(data);
+  
   useEffect( () => {
     projectFirestore.collection("movies").get().then( (snapshot) => {
       //console.log(snapshot);
@@ -29,6 +30,14 @@ const Allmovies = () => {
   return (
     <div>
       {error && <p>{error}</p>}
+      {data.map( (oneMovie) => {
+        return (
+          <div key={oneMovie.id}>
+            <h1>{oneMovie.title}</h1>
+            <Link to={`/one-movie/${oneMovie.id}`}>More Info</Link>
+          </div>
+        )
+      })}
     </div>
   )
 }
