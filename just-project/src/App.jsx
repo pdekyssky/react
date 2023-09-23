@@ -3,6 +3,7 @@ import Home from "./Pages/Home"
 import Allmovies from "./Pages/Allmovies"
 import Onemovie from "./Pages/Onemovie"
 import SharedLayout from "./Pages/SharedLayout"
+import Form from "./Pages/Form"
 import "./App.css"
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
               <Route index element={ <Home /> } />
               <Route path="all-movies" element={ <Allmovies /> } />
               <Route path="one-movie/:movieId" element={ <Onemovie /> } />
-
+              <Route path="/form" element={ <Form />} />
             </Route>
 
           </Routes>
