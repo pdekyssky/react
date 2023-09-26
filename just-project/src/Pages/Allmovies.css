@@ -1,0 +1,17 @@
+.all-movies-sec {
+    min-height: 100vh;
+}
+.all-movies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.delete-btn {
+    margin-top: 10px;
+    cursor: pointer;
+}
+.all-movies a {
+    color: #e5e5e5;
+    cursor: pointer;
+}

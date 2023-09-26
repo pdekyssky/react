@@ -1,16 +1,16 @@
 import  projectFirestore  from "../firebase/config"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-
+import "./Allmovies.css"
 
 const Allmovies = () => {
 
   const [data, setData] = useState([])
   const [error, setError] = useState("")
-  console.log(data);
+  //console.log(data);
   
   useEffect( () => {
-    projectFirestore.collection("movies").get().then( (snapshot) => {
+    const unsubscribe = projectFirestore.collection("movies").onSnapshot( (snapshot) => {
       //console.log(snapshot);
 
       if (snapshot.empty) {
@@ -22,20 +22,28 @@ const Allmovies = () => {
         })
       setData(result)
       }
-    } ).catch( (error) => {
-      setError(error.message)
-    })
+    }, (err) => {setError(err.message)} )
+
+    return () => unsubscribe()
   }, [] )
 
+
+  const handleDelete = (id) => {
+   projectFirestore.collection("movies").doc(id).delete()
+  }
+
   return (
-    <div>
+    <div className="all-movies-sec">
       {error && <p>{error}</p>}
       {data.map( (oneMovie) => {
         return (
-          <div key={oneMovie.id}>
+          <section >
+          <div key={oneMovie.id} className="all-movies">
             <h1>{oneMovie.title}</h1>
             <Link to={`/one-movie/${oneMovie.id}`}>More Info</Link>
+            <button onClick={ () => handleDelete(oneMovie.id)} className="delete-btn">Delete Movie</button>
           </div>
+          </section>
         )
       })}
     </div>

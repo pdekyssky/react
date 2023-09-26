@@ -4,17 +4,17 @@ import projectFirestore from "../firebase/config"
 const Form = () => {
 
     const [movieTitle, setMovieTitle] = useState("")
-    const [movieAge, setMovieAge] = useState(null)
-    const [movieLength, setMovieLength] = useState(null)
-    console.log(movieTitle, movieAge, movieLength);
+    const [movieAge, setMovieAge] = useState("")
+    const [movieLength, setMovieLength] = useState("")
+   // console.log(movieTitle, movieAge, movieLength);
 
     const handleSubmit = async (e) => {
         e.preventDefault()  
 
         const newMovie = {
             title : movieTitle, 
-            time : movieLength, 
-            age : movieAge
+            time : parseInt(movieLength), 
+            age : parseInt(movieAge)
         }
         try  {
             await projectFirestore.collection("movies").add(newMovie)
