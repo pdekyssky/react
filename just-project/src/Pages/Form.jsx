@@ -8,8 +8,23 @@ const Form = () => {
     const [movieLength, setMovieLength] = useState(null)
     console.log(movieTitle, movieAge, movieLength);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()  
+
+        const newMovie = {
+            title : movieTitle, 
+            time : movieLength, 
+            age : movieAge
+        }
+        try  {
+            await projectFirestore.collection("movies").add(newMovie)
+            setMovieTitle("")
+            setMovieAge("")
+            setMovieLength("")
+        } catch (err) {
+            console.log(error.message)
+        }
+        
     }
 
   return (
@@ -19,18 +34,21 @@ const Form = () => {
                 type="text" 
                 placeholder="Title"
                 onChange={ (e) => setMovieTitle(e.target.value) }
+                value={movieTitle}
                 />
             <input 
                 type="number" 
                 placeholder="Minimal age" 
                 min="10" 
                 onChange={ (e) => setMovieAge(e.target.value) }
+                value={movieAge}
                 />
             <input 
                 type="number" 
                 placeholder="Movie length" 
                 min="50" 
                 onChange={ (e) => setMovieLength(e.target.value) }
+                value={movieLength}
                 />
             <input 
                 type="submit" 
